@@ -38,123 +38,171 @@ HAVING condition;
 
 **Question 1**
 --
--- Paste Question 1 here
+![image](https://github.com/user-attachments/assets/023d49eb-b94c-4c96-8153-11ce83f77898)
+
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT PatientID, COUNT(*) AS TotalRecords
+FROM MedicalRecords
+GROUP BY PatientID 
+;
+
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/493ce7f6-f7bd-46a7-9c78-e73795b46d7f)
+
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+![image](https://github.com/user-attachments/assets/9bc14327-9237-4a57-b8d2-18cb79875ec4)
+
+
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT DATE(AppointmentDateTime) AS AppointmentDate, COUNT(*) AS TotalAppointments
+FROM Appointments
+GROUP BY DATE(AppointmentDateTime)
+;
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/ad873b73-eef5-49be-84ae-987496c36b6e)
+
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/5d9dac8a-8699-42e1-8e33-54671f8c955e)
 
 ```sql
--- Paste your SQL code below for Question 3
+SELECT DoctorID, COUNT(*) AS TotalAppointments
+FROM Appointments
+GROUP BY DoctorID
+;
+
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/0728045b-c13c-4794-9052-cedea7eeeb0f)
 
 **Question 4**
 ---
--- Paste Question 4 here
+![image](https://github.com/user-attachments/assets/6a79a494-e9a1-476a-a59e-af63a3c5a1f1)
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT AVG(LENGTH(email)) AS avg_email_length_below_30
+FROM customer
+WHERE city = 'Mumbai';
+
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/2405d4de-5788-47f4-b663-8dfe9aabd0c9)
 
 **Question 5**
 ---
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/b6a76bc6-ea3e-4cac-8b33-c41223b16fdf)
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT MAX(purch_amt) AS MAXIMUM
+FROM orders;
+
+
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/5e882bbd-45da-4c63-aa5e-692d38dc86aa)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/48f6a6ae-e116-4bde-91a2-891bfa97be7c)
+
 
 ```sql
--- Paste your SQL code below for Question 6
+SELECT SUM(income) AS total_income
+FROM employee
+WHERE age >= 40;
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/895e45be-afd7-4a75-9587-487697bafd56)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+![image](https://github.com/user-attachments/assets/a7c598d3-2d6a-47f8-b55a-35b07f23083a)
+
 
 ```sql
--- Paste your SQL code below for Question 7
+SELECT COUNT(*) AS employees_count
+FROM employee
+GROUP BY income > 50000;
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/98696f2f-7352-466e-babf-399c121f3251)
 
 **Question 8**
 ---
--- Paste Question 8 here
+![image](https://github.com/user-attachments/assets/a73fcce0-9c6a-4954-b44a-19fe6c18e84e)
+
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT jdate,SUM(workhour) AS 'SUM(workhour)'
+FROM employee1
+GROUP BY jdate
+HAVING SUM(workhour) > 40;
+
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/2d646ebe-a197-4ef9-85e0-26a112e4ff57)
 
 **Question 9**
 ---
--- Paste Question 9 here
+![image](https://github.com/user-attachments/assets/161964f5-91b9-44c0-9d28-e0128bf0e4a6)
+
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT  (age / 5) * 5 AS age_group,MAX(salary) AS 'MAX(salary)'
+FROM customer1
+GROUP BY age_group
+HAVING MAX(salary) > 8000;
+
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/66087769-fad8-47d1-92ef-c02ab34811f6)
 
 **Question 10**
 ---
--- Paste Question 10 here
+![image](https://github.com/user-attachments/assets/f8bcabd3-410b-4a64-a511-22ec7eb30e53)
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT category_id,Min(Price) AS 'Price'
+FROM products
+GROUP BY category_id
+HAVING Min(Price) < 10;
+
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/945e01fa-701e-488c-b7db-808a0d2d4c08)
+
+
 
 
 ## RESULT
