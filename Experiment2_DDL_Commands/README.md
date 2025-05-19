@@ -105,123 +105,189 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+![image](https://github.com/user-attachments/assets/66163850-1dfd-490e-ab70-714d31038dab)
+
 
 ```sql
--- Paste your SQL code below for Question 1
+CREATE TABLE products(
+product_id INTEGER PRIMARY KEY,
+product_name TEXT NOT NULL,
+list_price DECIMAL(10,2) NOT NULL check(list_price>=discount and list_price>=0),
+discount DECIMAL(10,2) default 0 NOT NULL check(discount>=0)
+);
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/c843e10b-ef45-417e-83fb-58be29f4da55)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+![image](https://github.com/user-attachments/assets/be02b6d8-a4c8-4e2f-a5b8-fbab9132c04d)
+
 
 ```sql
--- Paste your SQL code below for Question 2
+INSERT INTO Products(ProductID,Name,CategorY,Price,Stock)
+VALUES(101,"Laptop","Electronics",1500,50);
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/30acff29-1563-42f2-982e-e90aa291eddf)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/425b3d39-d66e-4618-9c22-9773dd4b6e72)
+
 
 ```sql
--- Paste your SQL code below for Question 3
+select * from Archived_students
+UNION ALL
+select * from Student_details 
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/601e5e3e-7f03-4d74-86f8-a1e011ff6d12)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+![image](https://github.com/user-attachments/assets/747e11fe-7cb1-4b3f-b9cd-28be76802894)
+
 
 ```sql
--- Paste your SQL code below for Question 4
+ALTER TABLE Student_details 
+ADD COLUMN "MobileNumber" NUMBER;
+
+ALTER TABLE Student_details 
+ADD COLUMN "Address" VARCHAR(100);
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/b6f271e4-c343-487c-bcb5-6271ec3adcbf)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/c766706c-1512-4302-a6f7-7af9ba34b2ca)
+
 
 ```sql
--- Paste your SQL code below for Question 5
+ALTER TABLE customer
+ADD COLUMN "discount" DECIMAL(5,2);
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/7b6f2041-2f44-466b-97c9-b616362085ea)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/e55da1b2-0761-4941-8928-885f2f77c46e)
+
 
 ```sql
--- Paste your SQL code below for Question 6
+CREATE TABLE item(
+item_id TEXT PRIMARY KEY,
+item_desc TEXT NOT NULL,
+rate  INTEGER NOT NULL,
+icom_id TEXT(4),
+FOREIGN KEY (icom_id) references company(com_id)
+ON UPDATE CASCADE
+ON DELETE CASCADE
+
+
+);
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/fbd203fd-772b-4575-9749-79563558d14c)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+![image](https://github.com/user-attachments/assets/e070a37e-e77b-4aa6-aa35-a06f4e5a3240)
+
 
 ```sql
--- Paste your SQL code below for Question 7
+CREATE TABLE Shipments(
+ShipmentID INTEGER PRIMARY KEY,
+ShipmentDate DATE,
+SupplierID INTEGER,
+OrderID INTEGER,
+foreign key(SupplierID) references Suppliers(SupplierID),
+foreign key(OrderID) references Orders(OrderID)
+
+);
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/12f1be83-964a-4323-8a6e-8dad3dbb65b8)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+![image](https://github.com/user-attachments/assets/b817bd9e-b967-45bc-ab20-8a65bf2efa3f)
+
 
 ```sql
--- Paste your SQL code below for Question 8
+CREATE TABLE jobs(
+job_id INTEGER PRIMARY KEY,
+job_title TEXT DEFAULT '',
+min_salary INTEGER DEFAULT 8000,
+max_salary INTEGER DEFAULT NULL
+
+
+);
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/497282ed-b6ef-4570-b93d-01d6297d2419)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+![image](https://github.com/user-attachments/assets/e15ff118-f046-4fe5-8f01-6a92613e24e6)
+
 
 ```sql
--- Paste your SQL code below for Question 9
+CREATE TABLE Events(
+EventID INTEGER,
+EventName TEXT,
+EventDate DATE
+
+
+); 
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/680c6ec5-f2a3-4a07-996f-7073370a0d48)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+![image](https://github.com/user-attachments/assets/2a734cc4-f361-460d-8efb-31d4ac5a8a82)
+
 
 ```sql
--- Paste your SQL code below for Question 10
+INSERT INTO Customers(ID,NAME,AGE,ADDRESS,SALARY)
+VALUES(1,"Ramesh",32,"Ahmedabad",2000),
+(2,"Khilan",25,"Delhi",1500),
+(3,"Kaushik",23,"Kota",2000);
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/6c2cdcb8-6c4a-43da-b6a8-e8bcc4d6f925)
 
 
 ## RESULT
